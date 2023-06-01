@@ -29,9 +29,9 @@ class Fondo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
-              colors: [Colors.white, Colors.green.shade200],
+              colors: [Colors.white, Color.fromARGB(255, 60, 0, 71)],
               begin: Alignment.bottomCenter,
               end: Alignment.centerRight)),
     );
@@ -49,7 +49,10 @@ class Texto extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('assets/logo.png'),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.6,
+              child: Image.asset('assets/logo.png'),
+            ),
             const Center(
               child: Text(
                 'Bienvenido',
@@ -84,7 +87,7 @@ class Texto extends StatelessWidget {
                   },
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 129, 182, 134))),
+                          Color.fromARGB(255, 60, 0, 71))),
                   child: const Text(
                     'Siguiente 〉',
                     style: TextStyle(

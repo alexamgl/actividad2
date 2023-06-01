@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:actividad2/pages/welcome.dart';
+import 'package:flutter/services.dart';
 
 class Formulario extends StatefulWidget {
   const Formulario({super.key});
@@ -11,6 +12,9 @@ class Formulario extends StatefulWidget {
 class _FormularioState extends State<Formulario> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    final orientation = MediaQuery.of(context).orientation;
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
         children: const [
@@ -30,7 +34,7 @@ class Fondo extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-              colors: [Colors.white, Color.fromARGB(255, 191, 243, 193)],
+              colors: [Colors.white, Color.fromARGB(255, 225, 172, 235)],
               begin: Alignment.bottomCenter,
               end: Alignment.centerRight)),
     );
@@ -52,7 +56,7 @@ class Contenido extends StatelessWidget {
             child: Text(
               'Ingresa tus datos',
               style: TextStyle(
-                color: Colors.grey,
+                color: Colors.black,
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
@@ -65,11 +69,12 @@ class Contenido extends StatelessWidget {
             child: Text(
               'Teclea tu correo electrónico y tu contraseña en los espacios requeridos',
               style: TextStyle(
-                color: Colors.grey,
+                color: Color.fromARGB(255, 59, 58, 58),
                 fontSize: 20,
                 letterSpacing: 1.0,
                 fontWeight: FontWeight.bold,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
           SizedBox(
@@ -141,7 +146,7 @@ class _DatosState extends State<Datos> {
                 onPressed: () {},
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                        Color.fromARGB(255, 110, 126, 112))),
+                        Color.fromARGB(255, 60, 0, 71))),
                 child: const Text(
                   'Entrar',
                   style: TextStyle(
@@ -160,7 +165,7 @@ class _DatosState extends State<Datos> {
                 onPressed: () {},
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                        Color.fromARGB(255, 110, 126, 112))),
+                        Color.fromARGB(255, 60, 0, 71))),
                 child: const Text(
                   'Ingresa con Google',
                   style: TextStyle(
@@ -173,7 +178,7 @@ class _DatosState extends State<Datos> {
             height: 50,
           ),
           SizedBox(
-            width: double.infinity,
+            width: 100,
             height: 30,
             child: ElevatedButton(
                 onPressed: () {
@@ -182,9 +187,9 @@ class _DatosState extends State<Datos> {
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                        Color.fromARGB(255, 141, 155, 142))),
+                        Color.fromARGB(255, 60, 0, 71))),
                 child: const Text(
-                  'Regresar',
+                  'Atrás',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
